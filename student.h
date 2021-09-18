@@ -9,32 +9,32 @@
 class student
 {
 private:
-string lastName;
-string firstName;
-string studentID,major;
+std::string lastName;
+std::string firstName;
+std::string studentID,major;
 double gpa;
-ifstream majorFile;
+std::ifstream majorsFile;
 int majorCodesCount;
-string majorCodes[];
-double money::finances;
+std::string majorCodes[1000]; //size of the Array
+// double money::finances;
 int MAX_MAJORS=250;
 double MAX_GPA=4.0;
-bool checkID(string);
-string expandMajorCode(string);
+bool checkID(std::string);
+std::string expandMajorCode(std::string);
 public:
 student();//default constructor
-student(string, string, string, string,double,double,double);
+student(std::string, std::string, std::string, std::string,double,double,double);
 ~student();
-string getLastName();
-string getFirstName();
-string getID();
-string getMajor();
+std::string getLastName();
+std::string getFirstName();
+std::string getID();
+std::string getMajor();
 double getGPA();
 void getCharges(double &, double &);
 double getBalance();
-void setName(string, string);
-void setID(string);
-void setMajor(string);
+void setName(std::string, std::string);
+void setID(std::string);
+void setMajor(std::string);
 void setGPA(double);
 void setCharges(double, double);
 void showStudent();

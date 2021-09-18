@@ -6,67 +6,47 @@
 #include"money.h"
 #include"student.h"
  
-student::student(string Last,string First, string ID, string Majco, double gradePoint, double charge, double finaid)
+using namespace std;
+ 
+student::student(std::string lastName,std::string firstName, std::string studentID, std::string major, double gpa, double charge, double financialAid)
 {
-      majorFile("majorsList.txt");
-      while (true)
-      {
-          if ()
-  {
-      if (majorFile,open())
-    {
-      while(majorFile>>majorCodes[])
-      {
-        
-      }
-
-    break;
-    }
-    else{cout<<"Error"<<endl; continue;}
-  }
-  else 
-  {
-      cout<<"Error, Invalid"<<endl;
-      continue
-  }
    
-      }
  
 }
-~student()
+student::~student()
 {
-    majorFile.close();
+    // majorFile.close();
 }
-student::string getLastName()
+std::string student:: getLastName()
 {
-   cin>>lastName;
-return LastName;
+std::cin>>lastName;
+return lastName;
 }
-string student::getFirstName()
+std::string student::getFirstName()
 {
-    cin>>firstName;
+    std::cin>>firstName;
     return firstName;
 }
-string student::getID()
+std::string student::getID()
 {
-cin>>studentID;
+std::cin>>studentID;
 return studentID;
 }
-student::getMajor()
+string student::getMajor()
 {
  return major;
 }
-student::getGPA()
+double student::getGPA()
 {
 return gpa;
-}
-void student::setName(string lastName, string firstName)
+}  
+void student::setName(std::string lastName, std::string firstName)
 {
-     lastName=string student::getFirstName();
-     firstName=string student::getLastName();
-    cout<<lastName<<", "<<firstName<<endl;
+     lastName=getFirstName();
+     firstName=getLastName();
+    std::cout<<lastName<<", "<<firstName<<endl;
 }
-void student::setID(string ID)
+void student::setID(std::string ID)
 {
   studentID=ID;
   majorCodesCount=studentID.size();
@@ -79,13 +59,13 @@ void student::setID(string ID)
   }
   else
   {
-      cout<<"Error, invalid"<<endl;
+      std::cout<<"Error, invalid"<<endl;
       continue;
   }
   }
   
 }
-void student::setMajor(string maj)
+void student::setMajor(std::string maj)
 {
 maj=major;
 }
@@ -93,24 +73,28 @@ void student::setGPA(double gradepoint)
 {
 gradepoint=gpa;
 }
-void showStudent()
-{
-    string indent(5, ' ');
-    string bars;
-    bars.append(70, '-');
+// void showStudent()
+// {
+//     std::string indent(5, ' ');
+//     std::string bars;
+//     bars.append(70, '-');
 
-    cout << endl << bars << endl;
-cout << "Student Summary" << endl;
-cout << indent << " Name: " << lastName << ", " <<
-firstName << endl;
-cout << indent << " ID: " << studentID << endl;
-cout << indent << " Major: " << major << endl;
-cout << fixed << showpoint << setprecision(2);
-cout << indent << " GPA: " << setw(8) << gpa << endl;
-cout << indent << "Charges: " << setw(8) << ch << indent
-<< indent << indent << "Financial Aid: " <<
-setw(8) << fn << endl;
-cout << indent << "Balance: " << setw(8) <<
-finances.getBalance() << endl;
+//     std::cout << endl << bars << endl;
+// std::cout << "Student Summary" << endl;
+// std::cout << indent << " Name: " << lastName << ", " <<
+// firstName << endl;
+// std::cout << indent << " ID: " << studentID << endl;
+// std::cout << indent << " Major: " << major << endl;
+// std::cout << fixed << showpoint << setprecision(2);
+// std::cout << indent << " GPA: " << setw(8) << gpa << endl;
+// std::cout << indent << "Charges: " << setw(8) << ch << indent
+// << indent << indent << "Financial Aid: " <<
+// setw(8) << fn << endl;
+// std::cout << indent << "Balance: " << setw(8) <<
+// // finances.getBalance() << endl;
+
+// }
+
+std::string checkID(std::string studentID){
 
 }
