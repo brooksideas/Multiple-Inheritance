@@ -175,7 +175,7 @@ PEDO - Pediatric Dentistry
 PER - Persian 
 PEX - Physical Education: Activity 
 PGDE - Postgraduate Dental Education 
-PGM - PGA Golf Management 
+PGM - Pga Golf Management 
 PHI - Philosophy 
 PHIL - Philosophy 
 PHS - Physical Sciences 
