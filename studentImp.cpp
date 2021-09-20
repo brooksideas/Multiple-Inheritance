@@ -35,9 +35,8 @@ student::student(std::string lastName, std::string firstName, std::string studen
     std::cout << "constructor!" << endl;
 }
 student::~student()
-{
-    std::cout << "Destroyed!" << endl;
-    // majorFile.close();
+{  
+
 }
 
 /// private functions

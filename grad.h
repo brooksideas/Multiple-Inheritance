@@ -11,9 +11,11 @@ private:
 bool isGA;
 double Fees;
 double MAX_FEES=5000.0;
+
+public:
 grad();
 grad(string,string,string,string,double,double,double,string,underGrad::sStat,bool,double);
-public:
+ 
 bool getGAstatus()const;
 double getGradFees() const;
 void setGAstatus(bool);
