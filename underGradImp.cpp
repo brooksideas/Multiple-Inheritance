@@ -13,7 +13,7 @@ underGrad::underGrad(std::string ltName, std::string ftName, std::string stID, s
         student::setID(stID);
         student::expandMajorCode(majCodes);
         student::setGPA(grpa);
-        //  student::setCharges(charg,finAid);
+        money::setCharges(charg,finAid);
         underGrad::setAdvisor(advisor);
         underGrad::setStatus(status);
         showStudent();
@@ -42,14 +42,18 @@ void underGrad::showStudent()
 
     std::cout << endl
               << bars << endl;
-      cout << "UNDERGRAD " << getName();
+    cout << "UNDERGRAD " << getName();
     std::cout << "Student Summary" << endl;
     std::cout << indent << " Name: " << getName() << endl;
     std::cout << indent << " ID: " << getID() << endl;
     std::cout << indent << " Major: " << getMajor() << endl;
-    // std::cout << fixed << showpoint << setprecision(2);
+    std::cout << fixed << showpoint << setprecision(2);
     std::cout << indent << " GPA: " << getGPA() << endl;
-
+    std::cout << indent << "Charges: " << setw(8) <<  money::getCharge() << indent
+    << indent << indent << "Financial Aid: " <<
+    setw(8) <<money::getAid() << endl;
+    std::cout << indent << "Balance: " << setw(8) <<
+    money::getBalance() << endl;
     // set status as probation based on GPA
     if (student::getGPA() <= 1.7)
     {

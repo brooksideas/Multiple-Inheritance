@@ -4,10 +4,11 @@
 #include <cstring>
 #include <fstream>
 #include <regex>
+#include <iomanip>
 #include "money.h"
 #include "student.h"
-
 using namespace std;
+
 student::student(){}
 student::student(std::string lastName, std::string firstName, std::string studentID, std::string major, double gpa, double charge, double financialAid)
 {
@@ -28,7 +29,8 @@ student::student(std::string lastName, std::string firstName, std::string studen
     }
     setID(studentID);
     setName(lastName,firstName);
-  
+    setGPA(gpa);
+    money::setCharges(charge,financialAid);
     showStudent();
     std::cout << "constructor!" << endl;
 }
@@ -126,8 +128,8 @@ string student::expandMajorCode(std::string major)
     {
         // read from the array if we can find the code
         // copy the majors from the majorsList file into the majors code array
-        getMajorsList();
-        cout << "BACK here !!";
+        getMajorsList(); 
+        
         // set the majorCodes[] array and set the majorCodesCount variable
   
         for (int i = 0; i < MAX_MAJORS; i++)
@@ -195,8 +197,7 @@ void student::setID(std::string ID)
 }
 
 void student::setMajor(std::string maj)
-{
-    cout << "SET MAJOR" << maj;
+{ 
     major = maj;
 }
 void student::setGPA(double gradepoint)
@@ -226,11 +227,11 @@ void student::showStudent()
     std::cout << indent << " Name: " << getName() << endl;
     std::cout << indent << " ID: " << getID() << endl;
     std::cout << indent << " Major: " << getMajor() << endl;
-    // std::cout << fixed << showpoint << setprecision(2);
+    std::cout << fixed << showpoint << setprecision(2);
     std::cout << indent << " GPA: " << getGPA() << endl;
-    // std::cout << indent << "Charges: " << setw(8) << ch << indent
-    // << indent << indent << "Financial Aid: " <<
-    // setw(8) << fn << endl;
-    // std::cout << indent << "Balance: " << setw(8) <<
-    // finances.getBalance() << endl;
+    std::cout << indent << "Charges: " << setw(8) <<  money::getCharge() << indent
+    << indent << indent << "Financial Aid: " <<
+    setw(8) <<money::getAid() << endl;
+    std::cout << indent << "Balance: " << setw(8) <<
+    money::getBalance() << endl;
 }

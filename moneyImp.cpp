@@ -16,14 +16,12 @@ money::money(double charges, double aid)
     if (!checkAid(charges, aid))
     {
         std::cout << "Error! The Financial Aid entered is out of range." << endl;
-    }
-    setCharges(charges, aid);
+    } 
 
     if (!checkBalance(charges, aid))
     {
         std::cout << "Error! The Balance is incorrect." << endl;
     }
-
 }
 
 bool money::checkCharges(double charges)
@@ -48,7 +46,6 @@ bool money::checkAid(double charges, double aid)
     {
         return false;
     }
-
 }
 bool money::checkBalance(double charges, double aid)
 {
@@ -61,16 +58,28 @@ bool money::checkBalance(double charges, double aid)
     {
         return false;
     }
-
 }
-//void money::getCharges(double charges , double aid){}
-
-double money::getBalance(){
-    balance =  charges - financialAid;
+double money::getBalance()
+{
+    balance = charges - financialAid;
     return balance;
 }
-
-void money::setCharges(double charged , double aid){
+double money::getCharge()
+{
+    return charges;
+}
+double money::getAid()
+{
+    return financialAid;
+}
+void money::setCharges(double charged, double aid)
+{ 
     charges = charged;
+    financialAid = aid;
+}
+
+void money::getCharges(double &charge, double &aid)
+{
+    charges = charge;
     financialAid = aid;
 }

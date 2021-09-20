@@ -15,5 +15,7 @@ class money
     bool checkCharges(double); 
     bool checkAid(double,double);
     bool checkBalance(double,double);
+    double getCharge();
+    double getAid();
 };
 #endif

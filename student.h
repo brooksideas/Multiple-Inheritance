@@ -6,7 +6,7 @@
 #include <cstring>
 #include <fstream>
 #include "money.h"
-class student
+class student:public money
 {
 private:
     std::string name;

@@ -13,11 +13,11 @@ int main(int argc, char **argv)
     double gpa = 2.2;
 
     double charges = 12.0;
-    double finance = 9.0;
+    double finance = 9.0; 
     std::string advisor = "Vinky";
     underGrad under;
 
-    money m(charges, finance);
-    //  student s(lastName, firstName, studentID, major, gpa, charges, finance);
-    // underGrad u(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
+   //  student studentObject(lastName, firstName, studentID, major, gpa, charges, finance);
+    //money moneyObject(charges, finance); 
+    underGrad underGradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
 }
