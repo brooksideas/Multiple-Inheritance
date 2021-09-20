@@ -60,6 +60,9 @@ struct Major
 };
 struct Major majorListArray[250];
 
+  /*
+       majorListArray  [{code: "AAD" , major: "Architecture Design"}]
+  */
 void student::getMajorsList()
 {
     struct Major
@@ -67,7 +70,7 @@ void student::getMajorsList()
         string code;
         string courseName;
     };
-    struct Major majorList[2500];
+    struct Major majorList[250];
 
     std::vector<string> codes;
     string fileName = "majorsList.txt";
@@ -111,8 +114,8 @@ void student::getMajorsList()
                 codes[i].empty();
             }
             else
-            {
-                courseName = courseName + " " + codes[i]; // concatenate course name found and store in array
+            { 
+                courseName = courseName + " " + codes[i]; // concatenate course name found and store in array  
                 majorList[majorIndex].courseName = courseName;
             }
         }
@@ -131,7 +134,7 @@ string student::expandMajorCode(std::string major)
         getMajorsList(); 
         
         // set the majorCodes[] array and set the majorCodesCount variable
-  
+    
         for (int i = 0; i < MAX_MAJORS; i++)
         {
 
@@ -143,7 +146,7 @@ string student::expandMajorCode(std::string major)
             // if specified major code was found store the expanded form
             if (major == majorListArray[i].code)
             {
-                expandedMajorCode = majorListArray[i].code + "-" + majorListArray[i].courseName;
+                expandedMajorCode = majorListArray[i].code + " -" + majorListArray[i].courseName;
             }
         }
         if (expandedMajorCode.empty())
