@@ -16,11 +16,11 @@ int main(int argc, char **argv)
     double charges = 12.0;
     double finance = 9.0;
     std::string advisor = "Vinky";
-    underGrad under; 
+    underGrad under;
     bool flag = false;
-    double fees = 500.09; 
-    //  student studentObject(lastName, firstName, studentID, major, gpa, charges, finance);
+    double fees = 500.09;
+    student studentObject(lastName, firstName, studentID, major, gpa, charges, finance);
     //money moneyObject(charges, finance);
-    // underGrad underGradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
-    grad gradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus(),flag,fees); 
+    underGrad underGradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
+    grad gradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus(), flag, fees);
 }

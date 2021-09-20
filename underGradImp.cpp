@@ -42,7 +42,7 @@ void underGrad::showStudent()
 
     std::cout << endl
               << bars << endl;
-    cout << "UNDERGRAD " << getName();
+ 
     std::cout << "Student Summary" << endl;
     std::cout << indent << " Name: " << getName() << endl;
     std::cout << indent << " ID: " << getID() << endl;
