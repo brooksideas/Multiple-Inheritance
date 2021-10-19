@@ -31,7 +31,13 @@ void underGrad::setAdvisor(string sAdvisor)
 }
 void underGrad::setStatus(sStat status)
 {
-    sStatus = status;
+
+    if ( status == 0 ) sStatus = PROBATION;
+    if ( status == 1 ) sStatus = GOOD;
+    if ( status == 2 ) sStatus = SPECIAL;
+    if ( status == 3 ) sStatus = NONE;
+ 
+    // sStatus = status;
 }
 void underGrad::showStudent()
 {

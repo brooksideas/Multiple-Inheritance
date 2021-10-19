@@ -6,8 +6,11 @@
 using namespace std;
 class underGrad:public student
 { 
-    protected:
+    
     enum sStat{PROBATION, GOOD, SPECIAL, NONE};
+    private:
+    string advisor = "";
+    sStat sStatus = NONE;
 
     public: 
     underGrad (std::string="", std::string="", std::string="",std::string="", double=0.0, double=0.0,double=0.0, std::string="", sStat=NONE);
@@ -16,8 +19,6 @@ class underGrad:public student
     void setAdvisor(string);
     void setStatus(sStat);
     void showStudent();
-        private:
-    string advisor = "";
-    sStat sStatus = NONE;
+    
 };
 #endif

@@ -4,7 +4,6 @@
 #include "money.h"
 
 using namespace std;
-money::money() {}
 money::money(double charges, double aid)
 {
 

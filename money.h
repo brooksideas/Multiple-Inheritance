@@ -7,7 +7,6 @@ class money
     double balance,financialAid,charges;
     double MAX_CHARGES=10000.0;
     public:
-    money();
     money(double=0.0,double=0.0);
     void getCharges(double &, double &);
     double getBalance();
