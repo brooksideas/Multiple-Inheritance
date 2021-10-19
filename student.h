@@ -26,8 +26,7 @@ std::string expandMajorCode(std::string);
 void getMajorsList();
 
 public:
-    student();//default constructor
-    student(std::string, std::string, std::string, std::string, double, double, double);
+    student(std::string="", std::string="", std::string="", std::string="",double=0.0, double=0.0, double=0.0);
     ~student();
     std::string getName();
     std::string getLastName();

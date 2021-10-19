@@ -8,7 +8,7 @@ class money
     double MAX_CHARGES=10000.0;
     public:
     money();
-    money(double,double);
+    money(double=0.0,double=0.0);
     void getCharges(double &, double &);
     double getBalance();
     void setCharges(double, double);

@@ -2,11 +2,10 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
-#include "undergrad.h"
+#include "underGrad.h"
 #include "student.h"
 #include "money.h"
 using namespace std;
-underGrad::underGrad(){}
 underGrad::underGrad(std::string ltName, std::string ftName, std::string stID, std::string majCodes, double grpa, double charg, double finAid, std::string advisor, sStat status)
 {
         student::setName(ltName, ftName);
@@ -24,7 +23,7 @@ string underGrad::getAdvisor() const
 }
 underGrad::sStat underGrad::getStatus() const
 {
-    return Status;
+    return sStatus;
 }
 void underGrad::setAdvisor(string sAdvisor)
 {
@@ -32,7 +31,7 @@ void underGrad::setAdvisor(string sAdvisor)
 }
 void underGrad::setStatus(sStat status)
 {
-    Status = status;
+    sStatus = status;
 }
 void underGrad::showStudent()
 {
@@ -65,7 +64,7 @@ void underGrad::showStudent()
     }
 
    // Print the Status based on the Enum value returned 
-   if (Status == 0)
+   if (sStatus == 0)
     {
         string statusName = "PROBATION";
         string indent(5, ' ');
@@ -73,7 +72,7 @@ void underGrad::showStudent()
         cout << indent << " Status: " << statusName;
         cout << endl;
     }
-    if (Status == 1)
+    if (sStatus == 1)
     {
         string statusName = "GOOD"; 
         string indent(5, ' ');
@@ -81,7 +80,7 @@ void underGrad::showStudent()
         cout << indent << " Status: " << statusName;
         cout << endl;
     }
-    if (Status == 2)
+    if (sStatus == 2)
     {
         string statusName = "SPECIAL"; 
         string indent(5, ' ');

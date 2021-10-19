@@ -36,7 +36,7 @@ void grad::setGAstatus(bool flag)
 void grad::setGradFees(double gradFees)
 {
     /*set grad value after checking*/
-    if (0.0 <= Fees <= MAX_FEES) //check fees
+    if (0.0 <= Fees && Fees <= MAX_FEES) //check fees
     {
         Fees = gradFees; //
     }

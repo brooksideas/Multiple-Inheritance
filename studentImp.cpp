@@ -9,7 +9,6 @@
 #include "student.h"
 using namespace std;
 
-student::student(){}
 student::student(std::string lastName, std::string firstName, std::string studentID, std::string major, double gpa, double charge, double financialAid)
 {
     std::cout << "Student MAJOR " << major << endl;
