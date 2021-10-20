@@ -21,8 +21,9 @@ private:
                                         // double money::finances;
     static constexpr double MAX_GPA = 4.0;
     bool checkID(std::string);
+    // std::string expandMajorCode(std::string);
 protected:    
-std::string expandMajorCode(std::string);
+
 void getMajorsList();
 
 public:
@@ -44,5 +45,6 @@ public:
     void showStudent();
     bool checkGPA(double);
     bool checkMajor(std::string); 
+     std::string expandMajorCode(std::string);
 };
 #endif

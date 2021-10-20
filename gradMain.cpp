@@ -41,25 +41,25 @@ int main()
 	underGrad bouvier1;
 	
 	underGrad meyers("Meyers", "Roger", "L000134341", "", 3.41, 1300.75,
-								350.0, "Bien", GOOD);
+								350.0, "Bien", underGrad::GOOD);
 	underGrad monroe;
 	underGrad wiggum("Wiggum", "Clancy");
 	underGrad ziff("Ziff", "Artie", "L001201101", "CS", 4.0, 9500.5, 2000.0);
 
 	grad bouvier2;
 	grad burns("Burns", "Charles", "L000017254", "UND", 2.49, 10000.0,
-								10000.0, "Jorgensen", PROBATION,
+								10000.0, "Jorgensen", underGrad::PROBATION,
 								false, 10.98);
 	grad quimby("Quimby", "Joe", "L000127318", "POS", 1.77, 7120.5,
-								800.0, "Gewali", PROBATION, true, 1234.56);
+								800.0, "Gewali", underGrad::PROBATION, true, 1234.56);
 	grad hibbert("Hibbert", "Julius", "L000087346", "PBH", 3.9, 1112.5,
-								1000.0, "Vasko", GOOD, false, 321.75);
+								1000.0, "Vasko", underGrad::GOOD, false, 321.75);
 	grad chalmers("Chalmers", "Gary", "L000001254", "HOA", 3.1, 1000.0,
-								500.0, "Taghva", GOOD, true, 2344.67);
+								500.0, "Taghva", underGrad::GOOD, true, 2344.67);
 	grad krabappel("Krabappel", "Edna", "L000021231", "WOM", 3.15,
-								1500.0, 1000.00, "Kim", GOOD, true);
+								1500.0, 1000.00, "Kim", underGrad::GOOD, true);
 	grad riviera("Riviera", "Nick", "L000000666", "NUC", 1.0, 9200.25,
-								1500.00, "Jorgensen", GOOD, false, 212.25);
+								1500.00, "Jorgensen", underGrad::GOOD, false, 212.25);
 
 // ----------------------------------------------------------------------
 //  Enter test data for temp students
@@ -70,17 +70,17 @@ int main()
 	monroe.setGPA(1.0);
 	monroe.setCharges(3700.75, 1000.0);
 	monroe.setAdvisor("Lee");
-	monroe.setStatus(PROBATION);
+	monroe.setStatus(underGrad::PROBATION);
 
 	wiggum.setID("L000000007");
 	wiggum.setMajor("CRJ");
 	wiggum.setGPA(0.23);
 	wiggum.setCharges(2300.5, 0.0);
 	wiggum.setAdvisor("Lee");
-	wiggum.setStatus(PROBATION);
+	wiggum.setStatus(underGrad::PROBATION);
 
 	ziff.setAdvisor("Yfantis");
-	ziff.setStatus(GOOD);
+	ziff.setStatus(underGrad::GOOD);
 
 	hibbert.setGradFees(1200.02);
 	hibbert.setGAstatus(true);
@@ -102,7 +102,7 @@ int main()
 	bouvier.getCharges(chg, aid);
 	bouvier1.setCharges(chg, aid);
 	bouvier1.setAdvisor("Lee");
-	bouvier1.setStatus(GOOD);
+	bouvier1.setStatus(underGrad::GOOD);
 
 // ----------------------------------------------------------------------
 //  Change name (due to marriage).
@@ -117,7 +117,7 @@ int main()
 	bouvier1.getCharges(chg, aid);
 	bouvier2.setCharges(chg, aid);
 	bouvier2.setAdvisor("Lee");
-	bouvier2.setStatus(GOOD);
+	bouvier2.setStatus(underGrad::GOOD);
 	bouvier2.setGradFees(235.75);
 	bouvier2.setGAstatus(false);
 
@@ -180,7 +180,7 @@ int main()
 	powers.setCharges(1000.0, 1100.00);							// err
 	powers.setCharges(2000.0, 2000.00);							// good
 	powers.setAdvisor("Pederson");								// good
-	powers.setStatus(GOOD);										// good
+	powers.setStatus(underGrad::GOOD);										// good
 
 	// misc errors
 	underGrad smithers("Smithers", "Waylon");					// valid
@@ -197,7 +197,7 @@ int main()
 	smithers.setCharges(2000.0, 2100.00);						// err
 	smithers.setCharges(2000.0, 1000.00);						// good
 	smithers.setAdvisor("Kim");									// good
-	smithers.setStatus(GOOD);									// good
+	smithers.setStatus(underGrad::GOOD);									// good
 
 	// misc errors
 	grad flanders("Flanders", "Ned");							// valid
@@ -214,7 +214,7 @@ int main()
 	flanders.setCharges(2000.0, 2100.00);						// err
 	flanders.setCharges(2000.0, 1000.00);						// good
 	flanders.setAdvisor("Kim");									// good
-	flanders.setStatus(GOOD);									// good
+	flanders.setStatus(underGrad::GOOD);									// good
 	flanders.setGradFees(1000000.0);							// err
 
 // ----------------------------------------------------------------------

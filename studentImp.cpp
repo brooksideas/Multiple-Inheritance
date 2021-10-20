@@ -11,6 +11,9 @@ using namespace std;
 
 student::student(std::string lastName, std::string firstName, std::string studentID, std::string major, double gpa, double charge, double financialAid)
 {
+     // declare for composition use
+    money m; 
+
     std::cout << "Student MAJOR " << major << endl;
     // bool correctId = checkID(studentID);
     if (!checkID(studentID))
@@ -20,22 +23,20 @@ student::student(std::string lastName, std::string firstName, std::string studen
         setID(ID);
     }
     string expandedMajor = expandMajorCode(major);
-     std::cout << "Student MAJOR  expandedMajor" <<  expandedMajor << endl;
-  
+    std::cout << "Student MAJOR  expandedMajor" << expandedMajor << endl;
+
     if (!checkGPA(gpa))
     {
         std::cout << "Error! The GPA displayed is out of range." << endl;
     }
     setID(studentID);
-    setName(lastName,firstName);
+    setName(lastName, firstName);
     setGPA(gpa);
-    money::setCharges(charge,financialAid);
+    m.setCharges(charge, financialAid);
     showStudent();
-    std::cout << "constructor!" << endl;
 }
 student::~student()
-{  
-
+{
 }
 
 /// private functions
@@ -58,7 +59,7 @@ struct Major
 };
 struct Major majorListArray[250];
 
-  /*
+/*
        majorListArray  [{code: "AAD" , major: "Architecture Design"}]
   */
 void student::getMajorsList()
@@ -89,10 +90,9 @@ void student::getMajorsList()
 
         std::string courseName = "";
         int majorIndex = 0;
-        for (int i = 0; i < codes.size(); i++)
+        for (int i = 0; (unsigned)i < codes.size(); i++)
         {
-            std::string delimiter = "-";
-            size_t pos = 0;
+            std::string delimiter = "-"; 
             Major major;
 
             std::smatch match;
@@ -112,8 +112,8 @@ void student::getMajorsList()
                 codes[i].empty();
             }
             else
-            { 
-                courseName = courseName + " " + codes[i]; // concatenate course name found and store in array  
+            {
+                courseName = courseName + " " + codes[i]; // concatenate course name found and store in array
                 majorList[majorIndex].courseName = courseName;
             }
         }
@@ -129,10 +129,10 @@ string student::expandMajorCode(std::string major)
     {
         // read from the array if we can find the code
         // copy the majors from the majorsList file into the majors code array
-        getMajorsList(); 
-        
+        getMajorsList();
+
         // set the majorCodes[] array and set the majorCodesCount variable
-    
+
         for (int i = 0; i < MAX_MAJORS; i++)
         {
 
@@ -151,13 +151,13 @@ string student::expandMajorCode(std::string major)
         {
             std::cout << "Error, Major code not found!" << endl;
         }
-        majorCodesCount = counter; 
+        majorCodesCount = counter;
         setMajor(expandedMajorCode);
         return expandedMajorCode;
     }
     else
     {
-        std::cout << "Error, invalid major code" << endl; 
+        std::cout << "Error, invalid major code" << endl;
         return expandedMajorCode;
     }
 }
@@ -198,7 +198,7 @@ void student::setID(std::string ID)
 }
 
 void student::setMajor(std::string maj)
-{ 
+{
     major = maj;
 }
 void student::setGPA(double gradepoint)
@@ -216,8 +216,30 @@ bool student::checkGPA(double gpa)
         return false;
     }
 }
+
+void student::getCharges(double &charge, double &aid)
+{
+    money m;
+    m.getCharges(charge, aid);
+}
+
+void student::setCharges(double charge, double aid)
+{
+    money m;
+    m.setCharges(charge, aid);
+}
+
+double student::getBalance()
+{
+    money m;
+    return m.getBalance();
+}
+
 void student::showStudent()
 {
+     // declare for composition use
+    money m; 
+
     std::string indent(5, ' ');
     std::string bars;
     bars.append(70, '-');
@@ -230,9 +252,7 @@ void student::showStudent()
     std::cout << indent << " Major: " << getMajor() << endl;
     std::cout << fixed << showpoint << setprecision(2);
     std::cout << indent << " GPA: " << getGPA() << endl;
-    std::cout << indent << "Charges: " << setw(8) <<  money::getCharge() << indent
-    << indent << indent << "Financial Aid: " <<
-    setw(8) <<money::getAid() << endl;
-    std::cout << indent << "Balance: " << setw(8) <<
-    money::getBalance() << endl;
+    std::cout << indent << "Charges: " << setw(8) << m.getCharge() << indent
+              << indent << indent << "Financial Aid: " << setw(8) << m.getAid() << endl;
+    std::cout << indent << "Balance: " << setw(8) << m.getBalance() << endl;
 }

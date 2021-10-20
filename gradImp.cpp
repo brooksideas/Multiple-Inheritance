@@ -5,19 +5,27 @@
 #include "underGrad.h" //underGrad header
 #include "student.h"   //student header
 using namespace std;
-grad::grad(string ltname, string ftname, string stID, string majcod, double grapoint, double chrgs, double aid, string advi, underGrad::sStat stats, bool gradflag, double gradfees)
+grad::grad(string ltname, string ftname, string stID, string majcod, double grapoint, double chrgs, double aid, string advi,  sStat stats, bool gradflag, double gradfees)
 { //constructor
+
+    // declare for composition use
+    money m;
+    student s;
+    underGrad u;
 
     if (0.0 <= gradfees && gradfees <= MAX_FEES) //error checking based on fees amount
     {
         /*Details for construtor values*/
-        student::setName(ltname, ftname); //from student
-        student::setID(stID);             //from student
-        student::expandMajorCode(majcod); //from student
-        student::setGPA(grapoint);        //from student
-        money::setCharges(chrgs, aid);    //from money
-        underGrad::setAdvisor(advi);      //from underGrad
-        underGrad::setStatus(stats);      //from underGrad
+        s.setName(ltname, ftname);  
+        s.setID(stID);              
+        s.setGPA(grapoint);        //from student
+        s.expandMajorCode(majcod);
+
+        m.setCharges(chrgs, aid);    //from money
+
+        u.setAdvisor(advi);       
+        u.setStatus(stats);      //from underGrad
+
         grad::setGAstatus(gradflag);      //from grad
         grad::setGradFees(gradfees);      //from grad
         showStudent();
@@ -28,7 +36,7 @@ grad::grad(string ltname, string ftname, string stID, string majcod, double grap
         Fees = 0.0;                                          //set default
     }
 }
- 
+
 void grad::setGAstatus(bool flag)
 {
     isGA = flag; //set the flag by the passed value
@@ -57,54 +65,61 @@ double grad::getGradFees() const
 }
 void grad::showStudent()
 {
+     // declare for composition use
+    money m;
+    student s;
+    underGrad u;
+
     std::string indent(5, ' ');
     std::string bars;
     bars.append(70, '-');
 
     std::cout << endl
               << bars << endl;
-  
+
     std::cout << "Student Summary" << endl;
     std::cout << indent << " Name: " << getName() << endl;   //name on given format
     std::cout << indent << " ID: " << getID() << endl;       //ID on given format
     std::cout << indent << " Major: " << getMajor() << endl; //major on given format
     std::cout << fixed << showpoint << setprecision(2);
     std::cout << indent << " GPA: " << getGPA() << endl; //GPA on given format
-    std::cout << indent << "Charges: " << setw(8) << money::getCharge() << indent
-              << indent << indent << "Financial Aid: " << setw(8) << money::getAid() << endl;
-    std::cout << indent << "Balance: " << setw(8) << money::getBalance() << endl;
-      // set status as probation based on GPA
-    if (student::getGPA() <= 1.7)
+    std::cout << indent << "Charges: " << setw(8) << m.getCharge() << indent
+              << indent << indent << "Financial Aid: " << setw(8) << m.getAid() << endl;
+    std::cout << indent << "Balance: " << setw(8) << m.getBalance() << endl;
+    // set status as probation based on GPA
+    if (s.getGPA() <= 1.7)
     {
-       sStat status = PROBATION;
-       setStatus(status);
-    }else{
-       sStat status = GOOD;
-       setStatus(status); 
+        sStat status = PROBATION;
+        setStatus(status);
+    }
+    else
+    {
+        sStat status = GOOD;
+        setStatus(status);
     }
 
-   // Print the Status based on the Enum value returned 
-   if (underGrad::getStatus() == 0)
+    // Print the Status based on the Enum value returned
+    if (u.getStatus() == 0)
     {
         string statusName = "PROBATION";
         string indent(5, ' ');
-        cout << indent << "Advisor: " << left << setw(17) << underGrad::getAdvisor();
+        cout << indent << "Advisor: " << left << setw(17) << u.getAdvisor();
         cout << indent << " Status: " << statusName;
         cout << endl;
     }
-    if (underGrad::getStatus() == 1)
+    if (u.getStatus() == 1)
     {
-        string statusName = "GOOD"; 
+        string statusName = "GOOD";
         string indent(5, ' ');
-        cout << indent << "Advisor: " << left << setw(17) << underGrad::getAdvisor();
+        cout << indent << "Advisor: " << left << setw(17) << u.getAdvisor();
         cout << indent << " Status: " << statusName;
         cout << endl;
     }
-    if (underGrad::getStatus() == 2)
+    if (u.getStatus() == 2)
     {
-        string statusName = "SPECIAL"; 
+        string statusName = "SPECIAL";
         string indent(5, ' ');
-        cout << indent << "Advisor: " << left << setw(17) << underGrad::getAdvisor();
+        cout << indent << "Advisor: " << left << setw(17) << u.getAdvisor();
         cout << indent << " Status: " << statusName;
         cout << endl;
     }

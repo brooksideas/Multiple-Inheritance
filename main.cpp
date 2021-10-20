@@ -20,7 +20,8 @@ int main(int argc, char **argv)
     bool flag = false;
     double fees = 500.09;
     student studentObject(lastName, firstName, studentID, major, gpa, charges, finance);
-    //money moneyObject(charges, finance);
-    underGrad underGradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
-    grad gradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus(), flag, fees);
+    money moneyObject(charges, finance);
+
+    // underGrad underGradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus());
+    // grad gradObject(lastName, firstName, studentID, major, gpa, charges, finance, advisor, under.getStatus(), flag, fees);
 }

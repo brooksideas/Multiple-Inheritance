@@ -43,15 +43,15 @@ int main()
 
 	underGrad bouvier1;
 	underGrad burns("Burns", "Charles", "L000017254", "UND", 1.0, 10000.0,
-								10000.0, "Smatresk", PROBATION);
+								10000.0, "Smatresk", underGrad::PROBATION);
 	underGrad chalmers("Chalmers", "Gary", "L000001254", "HOA", 2.1,
-								1000.0, 500.0, "Vasko", GOOD);
+								1000.0, 500.0, "Vasko", underGrad::GOOD);
 	underGrad quimby("Quimby", "Joe", "L000127318", "POS", 1.77, 7120.5,
-								800.0, "Gewali", NONE);
+								800.0, "Gewali", underGrad::NONE);
 	underGrad hibbert("Hibbert", "Julius", "L000087346", "PBH", 3.7,
-								1112.5, 1000.0, "Vasko", GOOD);
+								1112.5, 1000.0, "Vasko", underGrad::GOOD);
 	underGrad meyers("Meyers", "Roger", "L000134341", "", 3.41, 1300.75,
-								350.0, "Bien", NONE);
+								350.0, "Bien", underGrad::NONE);
 	underGrad monroe;
 	underGrad wiggum("Wiggum", "Clancy");
 	underGrad ziff("Ziff", "Artie", "L001201101", "CS", 4.0, 9500.5, 2000.0);
@@ -65,17 +65,17 @@ int main()
 	monroe.setGPA(1.0);
 	monroe.setCharges(3700.75, 1000.0);
 	monroe.setAdvisor("Vasko");
-	monroe.setStatus(PROBATION);
+	monroe.setStatus(underGrad::PROBATION);
 
 	wiggum.setID("L000000007");
 	wiggum.setMajor("CRJ");
 	wiggum.setGPA(0.23);
 	wiggum.setCharges(2300.5, 0.0);
 	wiggum.setAdvisor("Vasko");
-	wiggum.setStatus(PROBATION);
+	wiggum.setStatus(underGrad::PROBATION);
 
 	ziff.setAdvisor("Yfantis");
-	ziff.setStatus(NONE);
+	ziff.setStatus(underGrad::NONE);
 
 // ----------------------------------------------------------------------
 //  Change name (due to marriage).
@@ -90,7 +90,7 @@ int main()
 	bouvier.getCharges(chg, aid);
 	bouvier1.setCharges(chg, aid);
 	bouvier1.setAdvisor("Vasko");
-	bouvier1.setStatus(GOOD);
+	bouvier1.setStatus(underGrad::GOOD);
 
 // ----------------------------------------------------------------------
 //  make some changes...
@@ -140,7 +140,7 @@ int main()
 	powers.setCharges(1000.0, 1100.00);						// err
 	powers.setCharges(2000.0, 2000.00);						// good
 	powers.setAdvisor("Pederson");							// good
-	powers.setStatus(GOOD);									// good
+	powers.setStatus(underGrad::GOOD);									// good
 
 // ----------------------------------------------------------------------
 //  Show summaries for students
